@@ -1,34 +1,41 @@
 function f(n) {
-
-    if(typeof n !=='number') {
+  var day;
+    if(typeof n !=='number'){
         throw new Error("Error: parameter type is not a Number");
     }
- 
+    else if ((n>7)||(n<0)){
+        throw new Error("parameter should be in the range of 1 to 7");
+    }
+    else{
     switch (n) {
         case 1:
-            console.log("ორშაბათი");
+            day="კვირა";
             break;
         case 2:
-            console.log("სამშაბათი");
+            day="ორშაბათი";
             break;
         case 3:
-            console.log("ოთხშაბათი");
+            day="სამშაბათი";
             break;
         case 4:
-            console.log("ხუთხშაბათი");
+            day="ოთხშაბათი";
             break;
- 
         case 5:
-            console.log("პარასკევი");
+            day="ხუთხშაბათი";
             break;
         case 6:
-            console.log("შაბათი");
+            day="პარასკევი";
             break;
         case 7:
-            console.log("კვირა");
-        default:
-            console.log("parameter should be in the range of 1 to 7");
+            day="შაბათი";
+            break;
+        }
     }
+    return day;
  }
+
  
- f('d');
+ console.log(f(1)); // Sunday
+ console.log(f(2)); // Monday
+ console.log(f(8)); // Error: parameter should be in the range of 1 to 7
+ console.log(f('1')); // Error: parameter type is not a Number

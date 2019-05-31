@@ -7,4 +7,4 @@ function cube(a){
     }
 }
 
-console.log(cube(3));
+console.log(cube(2));
