@@ -8,7 +8,7 @@ const person = {
         return day*this.rate;
     },
     
-    set() {
+    set salary(value) {
         throw new Error('Salary can not be chnged');
     }
 }
@@ -23,4 +23,5 @@ Object.defineProperty(person,
 })
 
 person.rate=30;
+person.salary=5;
 console.log(person.salary);
