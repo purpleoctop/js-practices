@@ -11,16 +11,18 @@ class Customers {
         }
     }
 
-    add(user) {
-        if (typeof user !== 'object') {
-            throw new Error('First parameter must be an object!');
+   
+    add(person) {
+
+        if (typeof person !== 'object') {
+            throw new Error('The input should be object');
         }
 
-        if (typeof user.name !== 'string') {
-            throw new Error('Name yype must be a string and also required !');
+        if (typeof person.name !== 'string') {
+            throw new Error('The name must be string');
         }
 
-        return this._customers.push(user);
+        return this._customers.push(person);
     }
 
 }
